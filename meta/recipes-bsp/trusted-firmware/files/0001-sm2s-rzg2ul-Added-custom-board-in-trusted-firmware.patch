@@ -1,0 +1,32 @@
+From 14a5edd575628ea643f81ce4b720faa27fa11987 Mon Sep 17 00:00:00 2001
+From: Anil Patel <anil.patel@softwebsolutions.com>
+Date: Wed, 18 Oct 2023 13:02:55 +0530
+Subject: [PATCH 1/5] sm2s-rzg2ul: Added custom board in trusted firmware
+
+Signed-off-by: Anil Patel <anil.patel@softwebsolutions.com>
+---
+ plat/renesas/rz/board/sm2s-rzg2ul/rz_board.mk | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+ create mode 100644 plat/renesas/rz/board/sm2s-rzg2ul/rz_board.mk
+
+diff --git a/plat/renesas/rz/board/sm2s-rzg2ul/rz_board.mk b/plat/renesas/rz/board/sm2s-rzg2ul/rz_board.mk
+new file mode 100644
+index 000000000..4197a044c
+--- /dev/null
++++ b/plat/renesas/rz/board/sm2s-rzg2ul/rz_board.mk
+@@ -0,0 +1,12 @@
++#
++# Copyright (c) 2021, Renesas Electronics Corporation. All rights reserved.
++#
++# SPDX-License-Identifier: BSD-3-Clause
++#
++
++
++DDR_SOURCES	+=	plat/renesas/rz/soc/${PLAT}/drivers/ddr/param_mc.c	\
++				plat/renesas/rz/common/drivers/ddr/param_swizzle.c
++
++DDR_PLL4	:= 1600
++$(eval $(call add_define,DDR_PLL4))
+-- 
+2.25.1
+
