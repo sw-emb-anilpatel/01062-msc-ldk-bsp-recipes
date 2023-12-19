@@ -1,14 +1,18 @@
-# Copyright (C) 2022 AVNET Embedded, MSC Technologies GmbH
+# Copyright (C) 2023 AVNET Embedded, MSC Technologies GmbH
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-SRC_URI_append = " \
-		file://0001-sm2s-rzg2ul-Added-custom-board-in-trusted-firmware.patch \
-		file://0002-sm2s-rzg2ul-Added-custom-board-DDR-configuration-fil.patch \
-		file://0003-sm2s-rzg2ul-Added-support-for-AT25SF321B-qspi-flash.patch \
-		file://0004-sm2s-rzg2ul-Added-correct-DDR-param-files.patch \
-		file://0005-sm2s-rzg2ul-Forcefully-set-sm2s-rzg2ul-platform.patch"
+BRANCH = "msc-renesas_2.9-develop"
 
+SRC_URI = " \
+		git://github.com/sw-emb-anilpatel/rzg_trusted-firmware-a.git;branch=${BRANCH};protocol=https \
+		git://github.com/ARMmbed/mbedtls.git;branch=${BRANCH_mbedtls};name=mbedtls;destsuffix=mbedtls \
+	"
 
-PLATFORM_sm2s-rzg2ul = "g2ul"
-EXTRA_FLAGS_sm2s-rzg2ul = "BOARD=g2ul_smarc SOC_TYPE=1 SPI_FLASH=AT25SF321B"
+SRCREV = "93b6c3a249f14ad1f2c92cb6ca505c8aa491e1a7"
+
+PLATFORM_sm2s-rzg2l = "g2l"
+EXTRA_FLAGS_sm2s-rzg2l = "BOARD=sm2s-rzg2l SPI_FLASH=AT25SF321B"
+
+PLATFORM_sm2s-rzv2l = "v2l"
+EXTRA_FLAGS_sm2s-rzv2l = "BOARD=sm2s-rzv2l SPI_FLASH=AT25SF321B"
