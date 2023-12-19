@@ -1,13 +1,15 @@
 # Copyright (C) 2023 AVNET Embedded, MSC Technologies GmbH
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FLASH_WRITER_URL = "git://github.com/sw-emb-anilpatel/flash-writer.git;protocol=https"
+BRANCH = "msc-renesas-develop"
 
-SRC_URI_append += " \
-                   file://0001-sm2s-rzg2ul-Added-custom-board-sm2s-rzg2ul-support.patch \
-			"
+SRCREV = "e5f49e0e7ed8d6213a78406f828600e1c4d4e816"
 
 do_compile_prepend() {
-        if [ "${MACHINE}" = "sm2s-rzg2ul" ]; then
-                BOARD="SM2S_RZG2UL";
+        if [ "${MACHINE}" = "sm2s-rzg2l" ]; then
+                BOARD="SM2S_RZG2L";
+        fi
+        if [ "${MACHINE}" = "sm2s-rzv2l" ]; then
+                BOARD="SM2S_RZV2L";
         fi
 }
