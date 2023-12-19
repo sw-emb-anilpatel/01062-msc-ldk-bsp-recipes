@@ -4,6 +4,7 @@ meta-rz-features,meta-rz-codecs,dunfell
 meta-rz-features,meta-rz-graphics,dunfell
 meta-renesas,meta-rz-common,dunfell
 meta-renesas,meta-rzg2l,dunfell
+meta-renesas,meta-rzv2l,dunfell
 meta-openembedded,meta-networking,dunfell
 meta-openembedded,meta-python,dunfell
 meta-openembedded,meta-oe,dunfell
