@@ -2,11 +2,13 @@ KERVER = "5.10"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${KERVER}:"
 
-SRC_URI += " file://sm2s.cfg"
-
+SRC_URI += " \
+		file://sm2s.cfg \
+"
 KERNEL_URL = "git://github.com/sw-emb-anilpatel/linux-renesas.git;protocol=https"
-BRANCH = "msc-renesas_5.10.y-develop"
-SRCREV = "9ab832ee71b2e96b560631c02a4de48d9edb06e5"
+
+BRANCH = "msc-renesas-develop"
+SRCREV = "825c409e3003e425b69140105dfba8f978bd81d7"
 
 KERNEL_VERSION_SANITY_SKIP="1"
 
