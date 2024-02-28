@@ -6,5 +6,6 @@ require ../../meta-renesas.git/meta-rz-common/include/core-image-renesas-base.in
 
 IMAGE_INSTALL_append += "\
         can-utils iproute2 \
+	sm2s-sdk \
         "
 
